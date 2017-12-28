@@ -90,7 +90,6 @@
         <framework src="QuartzCore.framework" />
 
         <!-- Cocoapod configs -->
-        <pods-config ios-min-version="8.0" use-frameworks="true"/>
         <pod name="KakaoOpenSDK" version="1.5.1"/>
 
         <source-file src="src/ios/KakaoTalk.m" />
