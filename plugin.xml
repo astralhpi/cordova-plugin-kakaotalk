@@ -7,6 +7,8 @@
     <name>KakaoTalk</name>
     <description>KakaoTalk Cordova Plugin</description>
 
+    <dependency id="cordova-plugin-cocoapod-support"/>
+
 	<engines>
 		<engine name="cordova-android" version=">3.9.9" /><!-- Requires Gradle building -->
 	</engines>
@@ -86,7 +88,11 @@
         </config-file>
         
         <framework src="QuartzCore.framework" />
-        <framework src="src/ios/KakaoOpenSDK.framework" custom="true" />
+
+        <!-- Cocoapod configs -->
+        <preference name="pods_ios_min_version" value="8.0"/>
+        <preference name="pods_use_frameworks" value="true"/>
+        <pod name="KakaoOpenSDK" version="1.5.1"/>
 
         <source-file src="src/ios/KakaoTalk.m" />
         <header-file src="src/ios/KakaoTalk.h" />
