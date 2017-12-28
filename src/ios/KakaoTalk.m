@@ -1,3 +1,4 @@
+
 #import "KakaoTalk.h"
 #import <Cordova/CDVPlugin.h>
 #import <KakaoOpenSDK/KakaoOpenSDK.h>
@@ -7,7 +8,6 @@
 - (void) login:(CDVInvokedUrlCommand*) command
 {
     [[KOSession sharedSession] close];
-    
     [[KOSession sharedSession] openWithCompletionHandler:^(NSError *error) {
         
         if ([[KOSession sharedSession] isOpen]) {
@@ -41,7 +41,7 @@
         }
         
         
-    } authParams:nil authType:(KOAuthType)KOAuthTypeTalk, nil];
+    } authType:(KOAuthType)KOAuthTypeTalk, nil];
 }
 
 - (void)logout:(CDVInvokedUrlCommand*)command
@@ -148,4 +148,5 @@
 }
 
 @end
+
 
