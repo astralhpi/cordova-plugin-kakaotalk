@@ -94,5 +94,8 @@
 
         <source-file src="src/ios/KakaoTalk.m" />
         <header-file src="src/ios/KakaoTalk.h" />
+
+        <source-file src="src/ios/AppDelegate+Kakao.h" />
+        <header-file src="src/ios/AppDelegate+Kakao.m" />
     </platform>
 </plugin>
