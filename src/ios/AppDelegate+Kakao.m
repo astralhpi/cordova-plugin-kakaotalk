@@ -2,15 +2,14 @@
 #import <KakaoOpenSDK/KakaoOpenSDK.h>
 
 @implementation AppDelegate(Kakao)
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-            options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options{
+- (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation {
     if ([KOSession isKakaoAccountLoginCallback:url]){
         return [KOSession handleOpenURL:url];
     }
     return [super application:application
                       openURL:url
-                      options:options];
+            sourceApplication:sourceApplication
+                   annotation:annotation];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application{
