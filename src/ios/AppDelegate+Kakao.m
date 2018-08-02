@@ -6,14 +6,17 @@
     if ([KOSession isKakaoAccountLoginCallback:url]){
         return [KOSession handleOpenURL:url];
     }
-    return [super application:application
-                      openURL:url
-            sourceApplication:sourceApplication
-                   annotation:annotation];
+    return NO;
+    
+    
 }
-
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
+    if ([KOSession isKakaoAccountLoginCallback:url]){
+        return [KOSession handleOpenURL:url];
+    }
+    return NO;
+}
 - (void)applicationDidBecomeActive:(UIApplication *)application{
-    [super applicationDidBecomeActive:application];
     [KOSession handleDidBecomeActive];
     
 }
