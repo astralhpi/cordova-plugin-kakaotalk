@@ -52,7 +52,11 @@ public class KakaoTalk extends CordovaPlugin {
         Log.v(LOG_TAG, "kakao : initialize");
         super.initialize(cordova, webView);
         currentActivity = this.cordova.getActivity();
-        KakaoSDK.init(new KakaoSDKAdapter());
+	try {
+            KakaoSDK.init(new KakaoSDKAdapter());
+	} catch(KakaoSDK.AlreadyInitializedException e) {
+	    Log.v(LOG_TAG, "kakao : already initialized");
+	}
     }
 
     /**
